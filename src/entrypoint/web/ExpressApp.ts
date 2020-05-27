@@ -14,7 +14,9 @@ class ExpressApp {
 
   constructor(config: AppConfig, todoRouter: TodoRouter) {
     this.#app = express();
-    this.#config = { port: 3000, ...config };
+    this.#config = config;
+    // use 3000 if port is missing from configuration
+    if (!this.#config.port) this.#config.port = 3000;
     this.#todoRouter = todoRouter;
   }
 

@@ -24,7 +24,7 @@ class TodoInMemoryEntityGateway implements TodoEntityGateway {
       ...payload,
       isArchived: false,
       isDone: false,
-      todoId: Date.now.toString()
+      todoId: Date.now().toString()
     };
 
     this.#todos.push(todo);
